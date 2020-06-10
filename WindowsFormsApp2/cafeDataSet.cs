@@ -1,4 +1,6 @@
-﻿namespace WindowsFormsApp2
+﻿using System;
+
+namespace WindowsFormsApp2
 {
 
 
@@ -17,6 +19,11 @@ namespace WindowsFormsApp2.cafeDataSetTableAdapters
     {
     }
 
-    public partial class gecmisTableAdapter {
+    public partial class gecmisTableAdapter
+    {
+        internal void InsertGecmis()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

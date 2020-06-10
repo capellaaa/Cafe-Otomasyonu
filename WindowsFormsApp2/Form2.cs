@@ -21,7 +21,6 @@ namespace WindowsFormsApp2
 
         public void masa_olustur()
 
-
         {
             try
             {
@@ -34,7 +33,7 @@ namespace WindowsFormsApp2
             catch { MessageBox.Show("Kaynaklar yüklenirken Sorun oluştu Program Düzgün görüntelenmeyebilir"); }
 
 
-            for (int i = 0; i <= masaTableAdapter.masasayisi(); i++) //count sql sorgusunu çekerek masa sayısı kadar yeni masa oluşturduk  SELECT COUNT(*) FROM masa  sorgusu ile çalıştırdık 
+            for (int i = 0; i <= masaTableAdapter.masasayisi(); i++) //count sql sorgusunu çekerek masa sayısı kadar yeni masa oluşturdum  SELECT COUNT(*) FROM masa  sorgusu ile çalıştırdım
             {
 
                 string baglanti = "Data Source =LAPTOP-D1QEC82E; Initial Catalog =cafe; Integrated Security = true;";
@@ -50,21 +49,11 @@ namespace WindowsFormsApp2
                 {
                                                           
                    int durum = dr.GetInt32(1); //masanın dolu mu bos mu oldugu
-                    listView1.Items.Insert(i, (i+1).ToString(), durum); //listenin i. elemanına i yi 1 artırarak masa no oluşturduk masanın durumuna före resim atar
+                    listView1.Items.Insert(i, (i+1).ToString(), durum); //listenin i. elemanına i yi 1 artırarak masa no oluşturduk masanın durumuna göre resim atar
                     
-
-
                 }
                 conn.Close(); 
-
             }
-
-
-           
-
-
-            
-
         }
   
 
@@ -79,8 +68,13 @@ namespace WindowsFormsApp2
             Form6 form6 = new Form6(); //masa no bilmemiz için
             form6.label1.Text = masano;
             form6.Show();
-            //listView1.Clear();
-            //masa_olustur();
+            // masanın durmunu artık açık yani otuıran var yapıyoruz
+            masaTableAdapter.masadurumupdate(durum: 1, masa_no: Convert.ToInt32(masano));
+
+            listView1.Clear(); // masa listesini temizle 
+
+            masa_olustur(); //masaları yeniden oluştur
+
         }
 
         private void çIKToolStripMenuItem_Click(object sender, EventArgs e)
@@ -112,21 +106,27 @@ namespace WindowsFormsApp2
         private void Form2_Load(object sender, EventArgs e)
         {
 
-            if ((string)label1.Text != "1") //yönetici değilse 
-            {
-                //MessageBox.Show(label1.Text);
-                this.masaTableAdapter.Fill(this.cafeDataSet.masa);
-                yönetimToolStripMenuItem.Enabled = false; //yetki 1 değilse yönetim yetkisini kapatır
-            
-            }
-        
-            
+             this.masaTableAdapter.Fill(this.cafeDataSet.masa);
+               
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
             label2.Text=DateTime.Now.ToLongTimeString();
+            //listView1.Clear();
+            //masa_olustur();
 
+        }
+        public void masa_Guncelle()
+        {
+            listView1.Clear();
+            masa_olustur();
+
+        }
+
+        private void Form2_Activated(object sender, EventArgs e) //hesabı kapatınca masanın durumunun da güncellenmesi icin
+        {
+            masa_Guncelle();
         }
     }
 }

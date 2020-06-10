@@ -35,12 +35,9 @@ namespace WindowsFormsApp2
             {
                 id = row.Cells[0].Value.ToString();
                 //sadece urun id sini almamız onusilmek için yeterli
-
-
             }
 
-
-            // urun silme iişlemi verilen id deki urunu siler 
+            // urun silme işlemi verilen id deki urunu siler 
             urunTableAdapter.deleteurun(id: Convert.ToInt32(id));
         }   catch
             {
@@ -54,10 +51,21 @@ namespace WindowsFormsApp2
 
         private void button3_Click(object sender, EventArgs e)
         {
+            // file dialog aç 
             OpenFileDialog ac = new OpenFileDialog();
-            ac.Filter = " Resim Dosyaları |*.png"; //resmin uzantısını kısıtladık
+            ac.Filter = " JPEG Files (*.jpg)|*.jpg|PNG Files (*.png)|*.png|BMP Files (*.bmp)|*.bmp|All files (*.*)|*.*"; //resmin uzantısını kısıtladık
             ac.ShowDialog();
-            textBox3.Text = ac.FileName.ToString(); //resmin yolu ve ismini yazdık
+
+
+            string res_dir = System.Environment.GetFolderPath(Environment.SpecialFolder.MyPictures);//sistemin pictures klasörünü otomatik bulalım 
+
+            // resmi picture konumuna kopyalayalımm 
+            string source = ac.FileName.ToString();  //açılan dosyanın tam adı path ile baraber 
+            string[] s = (ac.FileName.ToString()).Split('\\'); // dosya ismini pathdan ayıralım ki hedefe yapıştırabilelim 
+            int count = s.Length; // parçaladığımız dosya yoılunun uzunluğunu alalım 
+            string dosya = s[count - 1]; // dosya isminiş listeyi ters yazarak direk alalım 
+            System.IO.File.Copy(source, res_dir + dosya, true); //  dosyayı üstüne yazma modunda kopyala
+            textBox3.Text = res_dir + dosya; // dosyanın kopyalanan adını ve yolunu textboca basalım 
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -78,8 +86,6 @@ namespace WindowsFormsApp2
                 resim = row.Cells[3].Value.ToString();
                 fiyat = row.Cells[2].Value.ToString();
 
-
-
             }
 
 
@@ -96,18 +102,10 @@ namespace WindowsFormsApp2
             //kullanıcı ne yaptığını bilsin
             button4.Text = "GÜNCELLE";
 
-
-
-
-
-
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-
-
-
 
             // form a veriler datagridviewden gelmişse kişi güncelleme işlemiyapıyoruz
             if (form_durum == "guncelle")
@@ -163,11 +161,9 @@ namespace WindowsFormsApp2
                 button4.Text = "KAYDET";
 
             }
-
-
         }
 
-        private void button5_Click(object sender, EventArgs e) //dosyadan veri ekleme ksımı
+        private void button5_Click(object sender, EventArgs e) //dosyadan veri ekleme kısmı
         {
 
             OpenFileDialog ac = new OpenFileDialog();
@@ -177,7 +173,7 @@ namespace WindowsFormsApp2
             try
             {
                 string[] lines = System.IO.File.ReadAllLines(@dosya); //burada okuduğu tüm verileri lines adında bir array e atar
-                foreach (string line in lines) //butun satırları tutan lines la bütün satırlar line ile gezilir
+                foreach (string line in lines) //butun satırları tutan liste lines la, bütün satırlar line ile gezilir
                 {
 
                     string[] veri = line.Split('&'); //okunan satırdaki verileri split et
@@ -188,9 +184,7 @@ namespace WindowsFormsApp2
                     catch
                     {
                         MessageBox.Show(line, "hatalı satır");
-                        MessageBox.Show("dosyanın verileri \"&\" ile ayırdığından emin olunuz! Diğer satırlar okunmaya çalışacak...");
-                       
-
+                        MessageBox.Show("dosyanın verileri \"&\" ile ayırdığından emin olunuz! Diğer satırlar okunmaya çalışacak..."); 
                     }
                 }
             }

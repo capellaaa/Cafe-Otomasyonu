@@ -40,8 +40,7 @@ namespace WindowsFormsApp2
                 for (int i = 0; i < Convert.ToInt32(sayitext.Text); i++) // textboxdan girilen sayı kadar masa oluştur
                 {
 
-                    masaTableAdapter.masainsert(masa_no: i + 1, durum: 0, siparis_id: 0);
-
+                    masaTableAdapter.masainsert(masa_no: i + 1, durum: 0, siparis_id: 0); //boş masa oluşturmuş oldum
 
                 }
             }

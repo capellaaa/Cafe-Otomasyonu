@@ -423,7 +423,7 @@ namespace WindowsFormsApp2 {
             
             private global::System.Data.DataColumn columntotal_fiyat;
             
-            private global::System.Data.DataColumn columnurun_listesi;
+            private global::System.Data.DataColumn columntarih;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
@@ -476,9 +476,9 @@ namespace WindowsFormsApp2 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn urun_listesiColumn {
+            public global::System.Data.DataColumn tarihColumn {
                 get {
-                    return this.columnurun_listesi;
+                    return this.columntarih;
                 }
             }
             
@@ -519,12 +519,12 @@ namespace WindowsFormsApp2 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public gecmisRow AddgecmisRow(int masa_no, double total_fiyat, string urun_listesi) {
+            public gecmisRow AddgecmisRow(int masa_no, double total_fiyat, string tarih) {
                 gecmisRow rowgecmisRow = ((gecmisRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         masa_no,
                         total_fiyat,
-                        urun_listesi};
+                        tarih};
                 rowgecmisRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowgecmisRow);
                 return rowgecmisRow;
@@ -549,7 +549,7 @@ namespace WindowsFormsApp2 {
             internal void InitVars() {
                 this.columnmasa_no = base.Columns["masa_no"];
                 this.columntotal_fiyat = base.Columns["total_fiyat"];
-                this.columnurun_listesi = base.Columns["urun_listesi"];
+                this.columntarih = base.Columns["tarih"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -559,9 +559,9 @@ namespace WindowsFormsApp2 {
                 base.Columns.Add(this.columnmasa_no);
                 this.columntotal_fiyat = new global::System.Data.DataColumn("total_fiyat", typeof(double), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columntotal_fiyat);
-                this.columnurun_listesi = new global::System.Data.DataColumn("urun_listesi", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnurun_listesi);
-                this.columnurun_listesi.MaxLength = 2147483647;
+                this.columntarih = new global::System.Data.DataColumn("tarih", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columntarih);
+                this.columntarih.MaxLength = 250;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1301,6 +1301,8 @@ namespace WindowsFormsApp2 {
             
             private global::System.Data.DataColumn columnyetki;
             
+            private global::System.Data.DataColumn columnhatirla;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public userTableDataTable() {
@@ -1384,6 +1386,14 @@ namespace WindowsFormsApp2 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn hatirlaColumn {
+                get {
+                    return this.columnhatirla;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1419,7 +1429,7 @@ namespace WindowsFormsApp2 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public userTableRow AdduserTableRow(string userName, string password, string isim, string iseBaslangicTarihi, int yetki) {
+            public userTableRow AdduserTableRow(string userName, string password, string isim, string iseBaslangicTarihi, int yetki, bool hatirla) {
                 userTableRow rowuserTableRow = ((userTableRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         userName,
@@ -1427,7 +1437,8 @@ namespace WindowsFormsApp2 {
                         isim,
                         iseBaslangicTarihi,
                         null,
-                        yetki};
+                        yetki,
+                        hatirla};
                 rowuserTableRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowuserTableRow);
                 return rowuserTableRow;
@@ -1463,6 +1474,7 @@ namespace WindowsFormsApp2 {
                 this.columniseBaslangicTarihi = base.Columns["iseBaslangicTarihi"];
                 this.columnid = base.Columns["id"];
                 this.columnyetki = base.Columns["yetki"];
+                this.columnhatirla = base.Columns["hatirla"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1480,6 +1492,8 @@ namespace WindowsFormsApp2 {
                 base.Columns.Add(this.columnid);
                 this.columnyetki = new global::System.Data.DataColumn("yetki", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnyetki);
+                this.columnhatirla = new global::System.Data.DataColumn("hatirla", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnhatirla);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnid}, true));
                 this.columnuserName.MaxLength = 250;
@@ -1492,6 +1506,7 @@ namespace WindowsFormsApp2 {
                 this.columnid.AllowDBNull = false;
                 this.columnid.ReadOnly = true;
                 this.columnid.Unique = true;
+                this.columnhatirla.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1985,17 +2000,17 @@ namespace WindowsFormsApp2 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string urun_listesi {
+            public string tarih {
                 get {
                     try {
-                        return ((string)(this[this.tablegecmis.urun_listesiColumn]));
+                        return ((string)(this[this.tablegecmis.tarihColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'gecmis\' tablosundaki \'urun_listesi\' sütunun değeri DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("\'gecmis\' tablosundaki \'tarih\' sütunun değeri DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablegecmis.urun_listesiColumn] = value;
+                    this[this.tablegecmis.tarihColumn] = value;
                 }
             }
             
@@ -2025,14 +2040,14 @@ namespace WindowsFormsApp2 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool Isurun_listesiNull() {
-                return this.IsNull(this.tablegecmis.urun_listesiColumn);
+            public bool IstarihNull() {
+                return this.IsNull(this.tablegecmis.tarihColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void Seturun_listesiNull() {
-                this[this.tablegecmis.urun_listesiColumn] = global::System.Convert.DBNull;
+            public void SettarihNull() {
+                this[this.tablegecmis.tarihColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -2375,6 +2390,17 @@ namespace WindowsFormsApp2 {
                 }
                 set {
                     this[this.tableuserTable.yetkiColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool hatirla {
+                get {
+                    return ((bool)(this[this.tableuserTable.hatirlaColumn]));
+                }
+                set {
+                    this[this.tableuserTable.hatirlaColumn] = value;
                 }
             }
             
@@ -2874,16 +2900,16 @@ namespace WindowsFormsApp2.cafeDataSetTableAdapters {
             tableMapping.DataSetTable = "gecmis";
             tableMapping.ColumnMappings.Add("masa_no", "masa_no");
             tableMapping.ColumnMappings.Add("total_fiyat", "total_fiyat");
-            tableMapping.ColumnMappings.Add("urun_listesi", "urun_listesi");
+            tableMapping.ColumnMappings.Add("tarih", "tarih");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[gecmis] ([masa_no], [total_fiyat], [urun_listesi]) VALUES (@ma" +
-                "sa_no, @total_fiyat, @urun_listesi)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [gecmis] ([masa_no], [total_fiyat], [tarih]) VALUES (@masa_no, @total" +
+                "_fiyat, @tarih)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@masa_no", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "masa_no", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@total_fiyat", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "total_fiyat", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@urun_listesi", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "urun_listesi", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@tarih", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "tarih", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2896,11 +2922,19 @@ namespace WindowsFormsApp2.cafeDataSetTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT masa_no, total_fiyat, urun_listesi FROM dbo.gecmis";
+            this._commandCollection[0].CommandText = "SELECT masa_no, total_fiyat, tarih\r\nFROM     gecmis";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "INSERT INTO [gecmis] ([masa_no], [total_fiyat], [tarih]) VALUES (@masa_no, @total" +
+                "_fiyat, @tarih)";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@masa_no", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "masa_no", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@total_fiyat", global::System.Data.SqlDbType.Float, 8, global::System.Data.ParameterDirection.Input, 0, 0, "total_fiyat", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@tarih", global::System.Data.SqlDbType.VarChar, 250, global::System.Data.ParameterDirection.Input, 0, 0, "tarih", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2960,7 +2994,7 @@ namespace WindowsFormsApp2.cafeDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(global::System.Nullable<int> masa_no, global::System.Nullable<double> total_fiyat, string urun_listesi) {
+        public virtual int Insert(global::System.Nullable<int> masa_no, global::System.Nullable<double> total_fiyat, string tarih) {
             if ((masa_no.HasValue == true)) {
                 this.Adapter.InsertCommand.Parameters[0].Value = ((int)(masa_no.Value));
             }
@@ -2973,11 +3007,11 @@ namespace WindowsFormsApp2.cafeDataSetTableAdapters {
             else {
                 this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
-            if ((urun_listesi == null)) {
+            if ((tarih == null)) {
                 this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(urun_listesi));
+                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(tarih));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -2993,6 +3027,47 @@ namespace WindowsFormsApp2.cafeDataSetTableAdapters {
                     this.Adapter.InsertCommand.Connection.Close();
                 }
             }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, false)]
+        public virtual int InsertGecmis(global::System.Nullable<int> masa_no, global::System.Nullable<double> total_fiyat, string tarih) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[1];
+            if ((masa_no.HasValue == true)) {
+                command.Parameters[0].Value = ((int)(masa_no.Value));
+            }
+            else {
+                command.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            if ((total_fiyat.HasValue == true)) {
+                command.Parameters[1].Value = ((double)(total_fiyat.Value));
+            }
+            else {
+                command.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((tarih == null)) {
+                command.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[2].Value = ((string)(tarih));
+            }
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
         }
     }
     
@@ -4240,10 +4315,11 @@ SELECT urun_ismi, fiyat, id, resim, image_key FROM urun WHERE (id = @id)";
             tableMapping.ColumnMappings.Add("iseBaslangicTarihi", "iseBaslangicTarihi");
             tableMapping.ColumnMappings.Add("id", "id");
             tableMapping.ColumnMappings.Add("yetki", "yetki");
+            tableMapping.ColumnMappings.Add("hatirla", "hatirla");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[userTable] WHERE (((@IsNull_userName = 1 AND [userName] IS NULL) OR ([userName] = @Original_userName)) AND ((@IsNull_password = 1 AND [password] IS NULL) OR ([password] = @Original_password)) AND ((@IsNull_isim = 1 AND [isim] IS NULL) OR ([isim] = @Original_isim)) AND ((@IsNull_iseBaslangicTarihi = 1 AND [iseBaslangicTarihi] IS NULL) OR ([iseBaslangicTarihi] = @Original_iseBaslangicTarihi)) AND ([id] = @Original_id) AND ((@IsNull_yetki = 1 AND [yetki] IS NULL) OR ([yetki] = @Original_yetki)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [userTable] WHERE (((@IsNull_userName = 1 AND [userName] IS NULL) OR ([userName] = @Original_userName)) AND ((@IsNull_password = 1 AND [password] IS NULL) OR ([password] = @Original_password)) AND ((@IsNull_isim = 1 AND [isim] IS NULL) OR ([isim] = @Original_isim)) AND ((@IsNull_iseBaslangicTarihi = 1 AND [iseBaslangicTarihi] IS NULL) OR ([iseBaslangicTarihi] = @Original_iseBaslangicTarihi)) AND ([id] = @Original_id) AND ((@IsNull_yetki = 1 AND [yetki] IS NULL) OR ([yetki] = @Original_yetki)) AND ([hatirla] = @Original_hatirla))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_userName", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "userName", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_userName", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "userName", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -4256,26 +4332,29 @@ SELECT urun_ismi, fiyat, id, resim, image_key FROM urun WHERE (id = @id)";
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_yetki", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "yetki", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_yetki", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "yetki", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_hatirla", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "hatirla", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[userTable] ([userName], [password], [isim], [iseBaslangicTarihi], [yetki]) VALUES (@userName, @password, @isim, @iseBaslangicTarihi, @yetki);
-SELECT userName, password, isim, iseBaslangicTarihi, id, yetki FROM userTable WHERE (id = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [userTable] ([userName], [password], [isim], [iseBaslangicTarihi], [yetki], [hatirla]) VALUES (@userName, @password, @isim, @iseBaslangicTarihi, @yetki, @hatirla);
+SELECT userName, password, isim, iseBaslangicTarihi, id, yetki, hatirla FROM userTable WHERE (id = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@userName", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "userName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@password", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "password", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@isim", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "isim", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@iseBaslangicTarihi", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "iseBaslangicTarihi", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@yetki", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "yetki", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@hatirla", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "hatirla", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[userTable] SET [userName] = @userName, [password] = @password, [isim] = @isim, [iseBaslangicTarihi] = @iseBaslangicTarihi, [yetki] = @yetki WHERE (((@IsNull_userName = 1 AND [userName] IS NULL) OR ([userName] = @Original_userName)) AND ((@IsNull_password = 1 AND [password] IS NULL) OR ([password] = @Original_password)) AND ((@IsNull_isim = 1 AND [isim] IS NULL) OR ([isim] = @Original_isim)) AND ((@IsNull_iseBaslangicTarihi = 1 AND [iseBaslangicTarihi] IS NULL) OR ([iseBaslangicTarihi] = @Original_iseBaslangicTarihi)) AND ([id] = @Original_id) AND ((@IsNull_yetki = 1 AND [yetki] IS NULL) OR ([yetki] = @Original_yetki)));
-SELECT userName, password, isim, iseBaslangicTarihi, id, yetki FROM userTable WHERE (id = @id)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [userTable] SET [userName] = @userName, [password] = @password, [isim] = @isim, [iseBaslangicTarihi] = @iseBaslangicTarihi, [yetki] = @yetki, [hatirla] = @hatirla WHERE (((@IsNull_userName = 1 AND [userName] IS NULL) OR ([userName] = @Original_userName)) AND ((@IsNull_password = 1 AND [password] IS NULL) OR ([password] = @Original_password)) AND ((@IsNull_isim = 1 AND [isim] IS NULL) OR ([isim] = @Original_isim)) AND ((@IsNull_iseBaslangicTarihi = 1 AND [iseBaslangicTarihi] IS NULL) OR ([iseBaslangicTarihi] = @Original_iseBaslangicTarihi)) AND ([id] = @Original_id) AND ((@IsNull_yetki = 1 AND [yetki] IS NULL) OR ([yetki] = @Original_yetki)) AND ([hatirla] = @Original_hatirla));
+SELECT userName, password, isim, iseBaslangicTarihi, id, yetki, hatirla FROM userTable WHERE (id = @id)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@userName", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "userName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@password", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "password", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@isim", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "isim", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@iseBaslangicTarihi", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "iseBaslangicTarihi", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@yetki", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "yetki", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@hatirla", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "hatirla", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_userName", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "userName", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_userName", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "userName", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_password", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "password", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
@@ -4287,6 +4366,7 @@ SELECT userName, password, isim, iseBaslangicTarihi, id, yetki FROM userTable WH
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_yetki", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "yetki", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_yetki", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "yetki", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_hatirla", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "hatirla", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
@@ -4300,11 +4380,11 @@ SELECT userName, password, isim, iseBaslangicTarihi, id, yetki FROM userTable WH
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[4];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[5];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT userName, password, isim, iseBaslangicTarihi, id, yetki FROM dbo.userTable" +
-                "";
+            this._commandCollection[0].CommandText = "SELECT userName, password, isim, iseBaslangicTarihi, id, yetki, hatirla\r\nFROM    " +
+                " userTable";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
@@ -4313,28 +4393,34 @@ SELECT userName, password, isim, iseBaslangicTarihi, id, yetki FROM userTable WH
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = @"INSERT INTO userTable
+            this._commandCollection[2].CommandText = "UPDATE userTable\r\nSET          hatirla = @hatirla\r\nWHERE  (id = @id)";
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@hatirla", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 0, 0, "hatirla", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[3].Connection = this.Connection;
+            this._commandCollection[3].CommandText = @"INSERT INTO userTable
                          (userName, password, isim, iseBaslangicTarihi, yetki)
 VALUES        (@userName,@password,@isim,@iseBaslangicTarihi,@yetki); 
 SELECT userName, password, isim, iseBaslangicTarihi, id, yetki FROM userTable WHERE (id = SCOPE_IDENTITY())";
-            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@userName", global::System.Data.SqlDbType.VarChar, 250, global::System.Data.ParameterDirection.Input, 0, 0, "userName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@password", global::System.Data.SqlDbType.VarChar, 250, global::System.Data.ParameterDirection.Input, 0, 0, "password", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@isim", global::System.Data.SqlDbType.VarChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, "isim", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@iseBaslangicTarihi", global::System.Data.SqlDbType.VarChar, 250, global::System.Data.ParameterDirection.Input, 0, 0, "iseBaslangicTarihi", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@yetki", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "yetki", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
-            this._commandCollection[3].Connection = this.Connection;
-            this._commandCollection[3].CommandText = "UPDATE [dbo].[userTable] SET [userName] = @userName, [password] = @password, [isi" +
-                "m] = @isim, [iseBaslangicTarihi] = @iseBaslangicTarihi, [yetki] = @yetki WHERE i" +
-                "d=@gid";
             this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@userName", global::System.Data.SqlDbType.VarChar, 250, global::System.Data.ParameterDirection.Input, 0, 0, "userName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@password", global::System.Data.SqlDbType.VarChar, 250, global::System.Data.ParameterDirection.Input, 0, 0, "password", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@isim", global::System.Data.SqlDbType.VarChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, "isim", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@iseBaslangicTarihi", global::System.Data.SqlDbType.VarChar, 250, global::System.Data.ParameterDirection.Input, 0, 0, "iseBaslangicTarihi", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@yetki", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "yetki", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@gid", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._commandCollection[4] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[4].Connection = this.Connection;
+            this._commandCollection[4].CommandText = "UPDATE [dbo].[userTable] SET [userName] = @userName, [password] = @password, [isi" +
+                "m] = @isim, [iseBaslangicTarihi] = @iseBaslangicTarihi, [yetki] = @yetki WHERE i" +
+                "d=@gid";
+            this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@userName", global::System.Data.SqlDbType.VarChar, 250, global::System.Data.ParameterDirection.Input, 0, 0, "userName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@password", global::System.Data.SqlDbType.VarChar, 250, global::System.Data.ParameterDirection.Input, 0, 0, "password", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@isim", global::System.Data.SqlDbType.VarChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, "isim", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@iseBaslangicTarihi", global::System.Data.SqlDbType.VarChar, 250, global::System.Data.ParameterDirection.Input, 0, 0, "iseBaslangicTarihi", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@yetki", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "yetki", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@gid", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4394,7 +4480,7 @@ SELECT userName, password, isim, iseBaslangicTarihi, id, yetki FROM userTable WH
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(string Original_userName, string Original_password, string Original_isim, string Original_iseBaslangicTarihi, int Original_id, global::System.Nullable<int> Original_yetki) {
+        public virtual int Delete(string Original_userName, string Original_password, string Original_isim, string Original_iseBaslangicTarihi, int Original_id, global::System.Nullable<int> Original_yetki, bool Original_hatirla) {
             if ((Original_userName == null)) {
                 this.Adapter.DeleteCommand.Parameters[0].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[1].Value = global::System.DBNull.Value;
@@ -4436,6 +4522,7 @@ SELECT userName, password, isim, iseBaslangicTarihi, id, yetki FROM userTable WH
                 this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[10].Value = global::System.DBNull.Value;
             }
+            this.Adapter.DeleteCommand.Parameters[11].Value = ((bool)(Original_hatirla));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -4456,7 +4543,7 @@ SELECT userName, password, isim, iseBaslangicTarihi, id, yetki FROM userTable WH
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string userName, string password, string isim, string iseBaslangicTarihi, global::System.Nullable<int> yetki) {
+        public virtual int Insert(string userName, string password, string isim, string iseBaslangicTarihi, global::System.Nullable<int> yetki, bool hatirla) {
             if ((userName == null)) {
                 this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -4487,6 +4574,7 @@ SELECT userName, password, isim, iseBaslangicTarihi, id, yetki FROM userTable WH
             else {
                 this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
+            this.Adapter.InsertCommand.Parameters[5].Value = ((bool)(hatirla));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -4507,7 +4595,7 @@ SELECT userName, password, isim, iseBaslangicTarihi, id, yetki FROM userTable WH
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string userName, string password, string isim, string iseBaslangicTarihi, global::System.Nullable<int> yetki, string Original_userName, string Original_password, string Original_isim, string Original_iseBaslangicTarihi, int Original_id, global::System.Nullable<int> Original_yetki, int id) {
+        public virtual int Update(string userName, string password, string isim, string iseBaslangicTarihi, global::System.Nullable<int> yetki, bool hatirla, string Original_userName, string Original_password, string Original_isim, string Original_iseBaslangicTarihi, int Original_id, global::System.Nullable<int> Original_yetki, bool Original_hatirla, int id) {
             if ((userName == null)) {
                 this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -4538,48 +4626,50 @@ SELECT userName, password, isim, iseBaslangicTarihi, id, yetki FROM userTable WH
             else {
                 this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
+            this.Adapter.UpdateCommand.Parameters[5].Value = ((bool)(hatirla));
             if ((Original_userName == null)) {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(Original_userName));
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(Original_userName));
             }
             if ((Original_password == null)) {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(Original_password));
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(Original_password));
             }
             if ((Original_isim == null)) {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(Original_isim));
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(Original_isim));
             }
             if ((Original_iseBaslangicTarihi == null)) {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(Original_iseBaslangicTarihi));
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((string)(Original_iseBaslangicTarihi));
             }
-            this.Adapter.UpdateCommand.Parameters[13].Value = ((int)(Original_id));
+            this.Adapter.UpdateCommand.Parameters[14].Value = ((int)(Original_id));
             if ((Original_yetki.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((int)(Original_yetki.Value));
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((int)(Original_yetki.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[15].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[16].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[16].Value = ((int)(id));
+            this.Adapter.UpdateCommand.Parameters[17].Value = ((bool)(Original_hatirla));
+            this.Adapter.UpdateCommand.Parameters[18].Value = ((int)(id));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -4600,8 +4690,8 @@ SELECT userName, password, isim, iseBaslangicTarihi, id, yetki FROM userTable WH
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string userName, string password, string isim, string iseBaslangicTarihi, global::System.Nullable<int> yetki, string Original_userName, string Original_password, string Original_isim, string Original_iseBaslangicTarihi, int Original_id, global::System.Nullable<int> Original_yetki) {
-            return this.Update(userName, password, isim, iseBaslangicTarihi, yetki, Original_userName, Original_password, Original_isim, Original_iseBaslangicTarihi, Original_id, Original_yetki, Original_id);
+        public virtual int Update(string userName, string password, string isim, string iseBaslangicTarihi, global::System.Nullable<int> yetki, bool hatirla, string Original_userName, string Original_password, string Original_isim, string Original_iseBaslangicTarihi, int Original_id, global::System.Nullable<int> Original_yetki, bool Original_hatirla) {
+            return this.Update(userName, password, isim, iseBaslangicTarihi, yetki, hatirla, Original_userName, Original_password, Original_isim, Original_iseBaslangicTarihi, Original_id, Original_yetki, Original_hatirla, Original_id);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4631,9 +4721,34 @@ SELECT userName, password, isim, iseBaslangicTarihi, id, yetki FROM userTable WH
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
+        public virtual int hatirla(bool hatirla1, int id) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[2];
+            command.Parameters[0].Value = ((bool)(hatirla1));
+            command.Parameters[1].Value = ((int)(id));
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, false)]
         public virtual int insertuser(string userName, string password, string isim, string iseBaslangicTarihi, global::System.Nullable<int> yetki) {
-            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[2];
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[3];
             if ((userName == null)) {
                 command.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -4686,7 +4801,7 @@ SELECT userName, password, isim, iseBaslangicTarihi, id, yetki FROM userTable WH
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
         public virtual int updateuser(string userName, string password, string isim, string iseBaslangicTarihi, global::System.Nullable<int> yetki, int gid) {
-            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[3];
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[4];
             if ((userName == null)) {
                 command.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -4917,27 +5032,42 @@ SELECT id, urun, total_fiyat, adet, masa_no FROM siparis WHERE (id = @id)";
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[3];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[6];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT id, urun, total_fiyat, adet, masa_no FROM dbo.siparis";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "SELECT id, urun, total_fiyat, adet, masa_no FROM dbo.siparis where masa_no=@masa_" +
-                "no";
+            this._commandCollection[1].CommandText = "DELETE FROM [dbo].[siparis] WHERE masa_no = @masa_no";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@masa_no", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "masa_no", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@masa_no", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "masa_no", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = "INSERT INTO siparis\r\n                         (urun, total_fiyat, adet, masa_no)\r" +
+            this._commandCollection[2].CommandText = "DELETE FROM [dbo].[siparis] WHERE id= @id";
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[3].Connection = this.Connection;
+            this._commandCollection[3].CommandText = "SELECT SUM(total_fiyat) FROM siparis where masa_no=@masano";
+            this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@masano", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "masa_no", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[4] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[4].Connection = this.Connection;
+            this._commandCollection[4].CommandText = "SELECT id, urun, total_fiyat, adet, masa_no FROM dbo.siparis where masa_no=@masa_" +
+                "no";
+            this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@masa_no", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "masa_no", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[5] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[5].Connection = this.Connection;
+            this._commandCollection[5].CommandText = "INSERT INTO siparis\r\n                         (urun, total_fiyat, adet, masa_no)\r" +
                 "\nVALUES        (@urun,@total_fiyat,@adet,@masa_no); \r\nSELECT id, urun, total_fiy" +
                 "at, adet, masa_no FROM siparis WHERE (id = SCOPE_IDENTITY())";
-            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@urun", global::System.Data.SqlDbType.VarChar, 250, global::System.Data.ParameterDirection.Input, 0, 0, "urun", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@total_fiyat", global::System.Data.SqlDbType.Float, 8, global::System.Data.ParameterDirection.Input, 0, 0, "total_fiyat", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@adet", global::System.Data.SqlDbType.Float, 8, global::System.Data.ParameterDirection.Input, 0, 0, "adet", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@masa_no", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "masa_no", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[5].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@urun", global::System.Data.SqlDbType.VarChar, 250, global::System.Data.ParameterDirection.Input, 0, 0, "urun", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@total_fiyat", global::System.Data.SqlDbType.Float, 8, global::System.Data.ParameterDirection.Input, 0, 0, "total_fiyat", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@adet", global::System.Data.SqlDbType.Float, 8, global::System.Data.ParameterDirection.Input, 0, 0, "adet", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@masa_no", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "masa_no", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4969,7 +5099,7 @@ SELECT id, urun, total_fiyat, adet, masa_no FROM siparis WHERE (id = @id)";
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
         public virtual cafeDataSet.siparisDataTable siparis_detay(global::System.Nullable<int> masa_no) {
-            this.Adapter.SelectCommand = this.CommandCollection[1];
+            this.Adapter.SelectCommand = this.CommandCollection[4];
             if ((masa_no.HasValue == true)) {
                 this.Adapter.SelectCommand.Parameters[0].Value = ((int)(masa_no.Value));
             }
@@ -5199,9 +5329,96 @@ SELECT id, urun, total_fiyat, adet, masa_no FROM siparis WHERE (id = @id)";
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, false)]
+        public virtual int DeleteHesap(global::System.Nullable<int> masa_no) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[1];
+            if ((masa_no.HasValue == true)) {
+                command.Parameters[0].Value = ((int)(masa_no.Value));
+            }
+            else {
+                command.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, false)]
+        public virtual int DeleteSiparis(int id) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[2];
+            command.Parameters[0].Value = ((int)(id));
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual global::System.Nullable<double> hesap_toplam(global::System.Nullable<int> masano) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[3];
+            if ((masano.HasValue == true)) {
+                command.Parameters[0].Value = ((int)(masano.Value));
+            }
+            else {
+                command.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            object returnValue;
+            try {
+                returnValue = command.ExecuteScalar();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            if (((returnValue == null) 
+                        || (returnValue.GetType() == typeof(global::System.DBNull)))) {
+                return new global::System.Nullable<double>();
+            }
+            else {
+                return new global::System.Nullable<double>(((double)(returnValue)));
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, false)]
         public virtual int siparisinsert(string urun, global::System.Nullable<double> total_fiyat, global::System.Nullable<double> adet, global::System.Nullable<int> masa_no) {
-            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[2];
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[5];
             if ((urun == null)) {
                 command.Parameters[0].Value = global::System.DBNull.Value;
             }

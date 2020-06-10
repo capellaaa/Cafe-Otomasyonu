@@ -10,7 +10,7 @@
     <Shape ID="DesignTable:masa" ZOrder="1" X="402" Y="86" Height="210" Width="289" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="83" />
     <Shape ID="DesignTable:urun" ZOrder="2" X="409" Y="292" Height="248" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="121" />
     <Shape ID="DesignTable:userTable" ZOrder="5" X="710" Y="82" Height="248" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="24" SplitterPosition="140" />
-    <Shape ID="DesignTable:siparis" ZOrder="3" X="711" Y="334" Height="210" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="121" />
+    <Shape ID="DesignTable:siparis" ZOrder="3" X="711" Y="334" Height="296" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="145" />
   </Shapes>
   <Connectors />
 </DiagramLayout>

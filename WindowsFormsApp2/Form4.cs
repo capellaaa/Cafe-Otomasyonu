@@ -26,7 +26,7 @@ namespace WindowsFormsApp2
             this.userTableTableAdapter.Fill(this.cafeDataSet.userTable);
             textBox2.Text = DateTime.Now.ToString("yyyy/MM/dd");
             dateTimePicker1.Format = DateTimePickerFormat.Custom; //dateTimePicker1 Format değiştirme
-            dateTimePicker1.CustomFormat = "yyyy/MM/dd"; 
+            dateTimePicker1.CustomFormat = "yyyy/MM/dd"; //bu biçimde yazmamızı sağlıyor
             label5.Visible = false; //güncelleme işleminin kullanıcıya gösterilmesini engellemek için
 
         }
@@ -37,19 +37,17 @@ namespace WindowsFormsApp2
             foreach (DataGridViewRow row in dataGridView1.SelectedRows) // datagridview in içerisinde seçili satırdaki butun verileri gezer  
             {
                id = row.Cells[0].Value.ToString();
-                //sadece kişi id sini almamız onusilmek için yeterli
+                //sadece kişi id sini almamız onu silmek için yeterli
                
-            
             }
             
 
-            // kullanıcı silme iişlemi verilen id deki kullanıcıyı siler 
+            // kullanıcı silme işlemi verilen id deki kullanıcıyı siler 
             userTableTableAdapter.deleteuser(id:Convert.ToInt32(id));
             //datagridview i tazeleyelim ki değişikleri kullanıcı görebilsin
-            dataGridView1.DataSource= userTableTableAdapter.GetData(); //verri tabanındaki verileri tekrar alır
+            dataGridView1.DataSource= userTableTableAdapter.GetData(); //veri tabanındaki verileri tekrar alır
             dataGridView1.Refresh(); //yenileme
             dataGridView1.Update();
-
 
         }
 
@@ -61,7 +59,7 @@ namespace WindowsFormsApp2
             string password = "";
             string b_tar = "";
             string yetki = "";
-            //datagridview de seçili olan satır sonuna kadar dönüp içindeki herşeyi değişkenlere atayalım
+            //datagridview de seçili olan satır sonuna kadar dönüp içindeki her şeyi değişkenlere atadım
             foreach (DataGridViewRow row in dataGridView1.SelectedRows) 
             {
                 id = row.Cells[0].Value.ToString();
@@ -71,19 +69,17 @@ namespace WindowsFormsApp2
                 b_tar = row.Cells[4].Value.ToString();
                 yetki = row.Cells[5].Value.ToString();
              
-
-
             }
 
            
-            //datagridviewden gelen verileri textboxlara yazarak kullanıcının düzenlemesine izin verelim
+            //datagridviewden gelen verileri textboxlara yazarak kullanıcının düzenlemesine izin verdim
             textBox1.Text = isim;
             textBox2.Text = b_tar;
             textBox3.Text = username;
             textBox4.Text = password;
             textBox2.Text = b_tar;
             label5.Text = id;
-            //checkbox kişi yetkili ise chekıd olsun
+            //textbox da kişi yetkili ise checked olsun
             if (yetki == "1")
             {
                 checkBox1.Checked = true;
@@ -93,7 +89,7 @@ namespace WindowsFormsApp2
                 checkBox1.Checked = false;
             }
 
-            //formun nerden geldiğinni anlamak için
+            //formun nerden geldiğini anlamak için
             form_durum = "guncelle";
             //kullanıcı ne yaptığını bilsin
             button1.Text = "GÜNCELLE";
@@ -113,7 +109,7 @@ namespace WindowsFormsApp2
         private void button1_Click(object sender, EventArgs e)
         {
 
-            //checkbox ı kontrol edelim yetki ne  kullanıcı tarafından değiştirilmişse atama yaptık
+            //checkbox ı kontrol edelim yetki kullanıcı tarafından değiştirilmişse atama yaptık
             int cyetki = 0;
             if (checkBox1.Checked)
             {
@@ -127,16 +123,15 @@ namespace WindowsFormsApp2
                 cyetki = 0;
             }
 
-            // form a veriler datagridviewden gelmişse kişi güncelleme işlemiyapıyoruz
+            // form a veriler datagridviewden gelmişse kişi güncelleme işlemi yapıyoruz
             if (form_durum=="guncelle")
             {
-          
-               
+       
 
-                //textboxlardaki verileri veritabanına basalım (id ye göre) 
+                //textboxlardaki verileri veritabanına bastım (id ye göre) 
                 userTableTableAdapter.updateuser(userName: textBox3.Text, password: textBox4.Text, isim: textBox1.Text, iseBaslangicTarihi: textBox2.Text, yetki:cyetki, gid: Convert.ToInt32(label5.Text));
 
-                //datagridview i tazeleyelim ki değişikleri kullanıcı görebilsin
+                //datagridview i güncelleyeyim ki değişikleri kullanıcı görebilsin
                 dataGridView1.DataSource = userTableTableAdapter.GetData();
                 dataGridView1.Refresh();
                 dataGridView1.Update();
@@ -147,11 +142,11 @@ namespace WindowsFormsApp2
                 textBox3.Clear();
                 textBox4.Clear();
                 label5.Text = "";
-                button1.Text = "KAYDET";
+                button1.Text = "KAYDET"; //yeni kişi eklemek için butonu tekrar kaydet butonu yaptık
 
             }
             else
-            //veriler kullannıcı tarafından girilmiştir insert işlemi yapılacak
+            //veriler kullanıcı tarafından girilmiştir insert işlemi yapılacak yani yeni bir kişi oluşturmuş oluyoruz
             {
 
 
@@ -159,11 +154,11 @@ namespace WindowsFormsApp2
 
 
 
-                //datagridview i tazeleyelim ki değişikleri kullanıcı görebilsin
+                //datagridview i güncelliyeyim ki değişikleri kullanıcı görebilsin.
                 dataGridView1.DataSource = userTableTableAdapter.GetData();
                 dataGridView1.Refresh();
                 dataGridView1.Update();
-                //formu da temizleyelim
+                //formu da temizledim
                 form_durum = "";
                 textBox1.Clear();
                 textBox2.Clear();
@@ -174,6 +169,10 @@ namespace WindowsFormsApp2
 
             }
 
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
 
         }
     }

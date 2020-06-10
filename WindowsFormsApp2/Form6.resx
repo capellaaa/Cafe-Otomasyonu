@@ -117,11 +117,14 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="siparisBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>329, 17</value>
+  <metadata name="id.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
   </metadata>
-  <metadata name="cafeDataSet.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>494, 17</value>
+  <metadata name="siparisBindingSource2.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>904, 17</value>
+  </metadata>
+  <metadata name="cafeDataSet1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>610, 17</value>
   </metadata>
   <metadata name="cafeDataSet.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>494, 17</value>
@@ -132,31 +135,47 @@
   <metadata name="masaTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>176, 17</value>
   </metadata>
-  <metadata name="id.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
+  <metadata name="urunTableAdapter1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 56</value>
   </metadata>
-  <metadata name="siparisBindingSource2.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>904, 17</value>
-  </metadata>
-  <metadata name="id.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="siparisBindingSource2.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>904, 17</value>
-  </metadata>
-  <metadata name="cafeDataSet1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>610, 17</value>
-  </metadata>
-  <metadata name="cafeDataSet1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>610, 17</value>
+  <metadata name="siparisBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>329, 17</value>
   </metadata>
   <metadata name="siparisBindingSource1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>733, 17</value>
   </metadata>
-  <metadata name="urunTableAdapter1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 56</value>
+  <metadata name="gecmisTableAdapter1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>205, 56</value>
+  </metadata>
+  <metadata name="cafeDataSet2.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>409, 56</value>
   </metadata>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>157</value>
+    <value>79</value>
   </metadata>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAA
+        AACdnZ3/ZWhp/zY8S/8eGWv/Hhh4/yYmVv9canH/ZXZ//2R1fv9ldX7/ZXV//2V1f/9mdn//Wmlx/2Rn
+        aP+dnZ3//////56jpP9LVW//IBar/yEVwf8vLYP/m7G7/7HJ1/+vx9b/psDQ/6K+zv+jvs//pMDQ/46m
+        tf+doaL///////////+eo6T/S1Vu/yAWoP8hFb//Ly2D/4eZoP+Mnab/jp6m/4SWof+AlJ//gZSf/4CT
+        nv96jpr/naGj////////////nqOk/0pVav8eGHT/IRW7/y8uhP9jb3L/nJ2e/6Slpf+lpqf/o6Wl/6Ok
+        pP+dnp7/X2tx/52hpP///////////56jpP9LVW7/IBag/yEVv/8vLYP/a3Z5/7u7uv+SkpH/cXNz/5GR
+        kf+ur6//urq6/2ZxeP+doaP///////////+eo6T/S1Vv/yAWq/8hFcL/Ly2E/2t3ev+8vb3/YoWZ/02S
+        uf9ghJj/zs/P/+Hh4P9lcHf/naGj////////////nqOk/0lTa/8dFJb/HhOq/ywreP9sd3r/f4mO/0+l
+        1f9dx///T6XV/11nbP+ko6P/Z3N5/52ho////////////52ho/9vf4v/anSM/2pzjv9vfI7/dICH/4SK
+        jf9WhJz/W5Cs/1aEnf9ob3P/paWl/2dzef+doaP///////////+coKL/obTA/+Ls8f/j7fH/0eDo/3eF
+        jf+foKD/p6en/6ampf+mpqb/q6ys/6qsrP9hbXP/naKk///////a2tv/hYiP/3eGlP+Snqr/kp6q/4uZ
+        p/9ndoT/V2Ju/1lkcP9ZZHD/WWRw/1lkcP9XYm7/XWt4/4aJkP/a2tv/f4GH/ycxVf8nM13/JjJc/yYy
+        XP8mMlz/KDRe/yk2X/8pNV//KTVf/yk1X/8pNV//KTZf/yk1X/8nMVX/f4GH/36Kkf9JlL7/UqjZ/1Kn
+        1/9Sp9f/UqfX/1Kn1/9Sp9f/UqfX/1Kn1/9Sp9f/UqfX/1Kn1/9SqNn/SZS+/36Kkf9iaGr/OWiC/0F9
+        n/9BfJ3/QXyd/0F8nf9BfJ3/QXyd/0F8nf9BfJ3/QXyd/0F8nf9BfJ3/QX2f/zlogv9iaGr/0dDQ/1WC
+        m/9Yu/L/Wr31/1q99f9avfX/Wr31/1q99f9avfX/Wr31/1q99f9avfX/Wr31/1i78v9Vgpv/0dDQ//79
+        /f+SnqX/S4yx/1Gaw/9RmsL/UZrC/1Gawv9RmsL/UZrC/1Gawv9RmsL/UZrC/1Gaw/9LjLH/kp6l//79
+        /f//////tre3/1JVVv9SVlf/UlZX/1JWV/9SVlf/UlZX/1JWV/9SVlf/UlZX/1JWV/9SVlf/UlVW/7a3
+        t///////AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAA==
+</value>
+  </data>
 </root>

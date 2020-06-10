@@ -1,5 +1,5 @@
-mfd&15.8
-mfdmfd&15.8&yok
+mfd&15.8&C:\Users\Esra Demir\Desktop\gorsel_vize
+mfdmfd&15.8&
 asd&15.8&yok
 asdasd&15.8&yok
 asdasda&15.8&yok
